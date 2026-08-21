@@ -1,0 +1,25 @@
+// Copy this file to EmailDefaults.cs and fill in the real values before
+// building. EmailDefaults.cs is gitignored so the credentials never reach
+// the (public) repository.
+namespace MariaDBBackupTray;
+
+public static class EmailDefaults
+{
+    /// <summary>SMTP server hostname.</summary>
+    public const string SmtpHost = "smtp.example.com";
+
+    /// <summary>587 for STARTTLS (most common), 465 for SSL, 25 for none.</summary>
+    public const int SmtpPort = 587;
+
+    /// <summary>Login for the SMTP server, usually the full email address.</summary>
+    public const string SmtpUser = "backups@example.com";
+
+    /// <summary>SMTP password / app password.</summary>
+    public const string SmtpPassword = "CHANGE-ME";
+
+    /// <summary>"STARTTLS" | "SSL" | "None". Match this to the port above.</summary>
+    public const string SmtpSecurity = "STARTTLS";
+
+    /// <summary>The From address recipients will see.</summary>
+    public const string FromAddress = "backups@example.com";
+}

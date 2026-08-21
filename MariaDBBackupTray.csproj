@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>Odyssey Cloud Backups</AssemblyName>
+    <Product>Odyssey Cloud Backups</Product>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <AssemblyTitle>Odyssey Cloud Backups</AssemblyTitle>
+    <RootNamespace>MariaDBBackupTray</RootNamespace>
+    <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
+    <Version>1.0.0</Version>
+    <!-- Make single-file publish truly one exe: embed native libs, compress. -->
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- App icon, embedded so the tray can load it from the single-file exe -->
+    <EmbeddedResource Include="app.ico" LogicalName="app.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- MariaDB/MySQL client for connection test + database listing -->
+    <PackageReference Include="MySqlConnector" Version="2.3.7" />
+    <!-- AES-256 password-protected zip support -->
+    <PackageReference Include="SharpZipLib" Version="1.4.2" />
+    <!-- Robust SMTP (STARTTLS, implicit SSL, plain) -->
+    <PackageReference Include="MailKit" Version="4.16.0" />
+    <!-- Windows DPAPI for encrypting stored passwords -->
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="8.0.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,8 @@
+bin/
+obj/
+.vs/
+installer/Output/
+
+# Real SMTP credentials - NEVER commit (public repo).
+# Copy EmailDefaults.cs.template to EmailDefaults.cs and fill in to build.
+EmailDefaults.cs
